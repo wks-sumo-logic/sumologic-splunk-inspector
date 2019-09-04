@@ -1,5 +1,5 @@
-Sumotoolbox-Splunk-Inspector
-============================
+Sumologic-Splunk-Inspector
+==========================
 
 Splunk-inspector is one of a family of scripts designed to analyze existing logi/metric collection
 and generate a report card for clients. 
@@ -23,7 +23,7 @@ The steps are as follows:
        It can be downloaded from https://git-scm.com/downloads
     
     3. Open a new shell/command prompt. It must be new since only a new shell will include the new python 
-       path that was created in step 1. Cd to the folder where you want to install sumotoolbox.
+       path that was created in step 1. Cd to the folder where you want to install the project
     
     4. Execute the following command to install pipenv, which will manage all of the library dependencies 
        for us:
@@ -41,7 +41,7 @@ The steps are as follows:
     This will create a new folder called sumologic-splunk-inspector. 
     
     6. Change into the previous folder. Type the following to install all the package 
-       dependencies (this may take a while as this will download all of the libraries that sumotoolbox uses):
+       dependencies (this may take a while as this will download all of the libraries that it uses):
 
     pipenv install
     
