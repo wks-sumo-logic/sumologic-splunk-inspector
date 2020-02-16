@@ -2,17 +2,16 @@
 # -*- coding: utf-8 -*-
 
 """
-Sumologic doctor, analyzing a system files and usage
-for ingestion/integration with sumologic
+Sumologic doctor, analyzing a system files and usage for ingestion/integration with sumologic
 
 Usage:
-    $ python sumologic-splunk-inspector [ options ]
+    $ python sumologic_splunk_inspector [ options ]
 
 Style:
     Google Python Style Guide:
     http://google.github.io/styleguide/pyguide.html
 
-    @name           sumologic-splunk-inspector
+    @name           sumologic_splunk_inspector
     @version        1.0.00
     @author-name    Wayne Schmidt
     @author-email   wschmidt@sumologic.com
@@ -184,7 +183,7 @@ def build_archive(tardir, dirlist):
     tar_name = os.path.join(tardir, SRCTAG + '.' + DSTAMP + '.' + 'tar.gz')
     with tarfile.open(tar_name, "w:gz") as tar_handle:
         for mydir in dirlist:
-            for root, dirs, files in os.walk(mydir):
+            for root, _dirs, files in os.walk(mydir):
                 for file in files:
                     tar_handle.add(os.path.join(root, file))
 

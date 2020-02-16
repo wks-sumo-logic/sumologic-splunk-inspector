@@ -36,9 +36,9 @@ The steps are as follows:
  
     5. Clone this repo using the following command:
     
-        git clone git@github.com:wks-sumo-logic/sumologic-splunk-inspector.git
+        git clone git@github.com:wks-sumo-logic/sumologic_splunk_inspector.git
     
-    This will create a new folder called sumologic-splunk-inspector. 
+    This will create a new folder called sumologic_splunk_inspector. 
     
     6. Change into the previous folder. Type the following to install all the package 
        dependencies (this may take a while as this will download all of the libraries that it uses):
@@ -64,7 +64,7 @@ Features and Usage
 ==================
 
 * write up and examples coming soon
-j
+
 License
 =======
 
