@@ -1,11 +1,9 @@
 Sumologic-Splunk-Inspector
 ==========================
 
-Splunk-inspector is one of a family of scripts designed to analyze existing logi/metric collection
-and generate a report card for clients. 
+Splunk-inspector unpacks and organizes a Splunk diagnostic file and publishes this to Sumo Logic.
 
-This will look at usage, configuration, and provide analysis based on best practices.
-The information can be ingested into other sources, to help plan and shape client actions.
+The result is different Sumo Logic sources showing usage, configuration, content to help migration and planning.
 
 Installing the Source
 =====================
@@ -34,11 +32,7 @@ The steps are as follows:
     
         sudo pip3 install pipenv 
  
-    5. Clone this repo using the following command:
-    
-        git clone git@github.com:wks-sumo-logic/sumologic_splunk_inspector.git
-    
-    This will create a new folder called sumologic_splunk_inspector. 
+    5. Clone this repo and change to the directory
     
     6. Change into the previous folder. Type the following to install all the package 
        dependencies (this may take a while as this will download all of the libraries that it uses):
@@ -51,7 +45,7 @@ Configuring the Source
 As the script can be installed both locally or remotely, the client can choose to run the script
 locally or remotely.
 
-    1. if remotely, then configure SSH access for a admin or operations account
+    1. if remotely, then configure SSH access for an admin or operations account
     
     2. if locally, then follow the confirmation steps and install any python modules required
     
@@ -69,13 +63,15 @@ License
 =======
 
 Copyright 2019 Wayne Kirk Schmidt
+https://www.linkedin.com/in/waynekirkschmidt
 
-Licensed under the GNU GPL License (the "License");
-you may not use this file except in compliance with the License.
+Licensed under the Apache 2.0 License (the "License");
+
+You may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    license-name   GNU GPL
-    license-url    http://www.gnu.org/licenses/gpl.html
+    license-name   APACHE 2.0
+    license-url    http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -86,6 +82,10 @@ limitations under the License.
 Support
 =======
 
-Feel free to e-mail me with issues to: wschmidt@sumologic.com
-I will provide "best effort" fixes and extend the scripts.
+Feel free to e-mail me with issues to: 
 
+*    wschmidt@sumologic.com
+
+*    wayne.kirk.schmidt@gmail.com
+
+I will provide "best effort" fixes and extend the scripts.

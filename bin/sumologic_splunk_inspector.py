@@ -99,7 +99,7 @@ try:
     USERNAME = os.environ['USERNAME']
     SUMOHTTP = os.environ['SUMOHTTP']
 except KeyError as myerror:
-    print('Environment Variable Not Set :: {} '.format(myerror.args[0]))
+    print(f'Environment Variable Not Set :: {myerror.args[0]}')
 
 def main():
     """
@@ -108,12 +108,13 @@ def main():
     """
 
     homedir = os.path.abspath((os.path.join(os.environ['HOME'], 'Downloads')))
-    cmddir = '%s/%s/%s/cmd' % (homedir, SRCTAG, DSTAMP)
-    cfgdir = '%s/%s/%s/cfg' % (homedir, SRCTAG, DSTAMP)
-    logdir = '%s/%s/%s/log' % (homedir, SRCTAG, DSTAMP)
-    tardir = '%s/%s/%s/tar' % (homedir, SRCTAG, DSTAMP)
-    os.makedirs(tardir, exist_ok=True)
-    dirlist = [cmddir, cfgdir, logdir]
+
+    cmddir = f'{homedir}/{SRCTAG}/{DSTAMP}/cmd' % (homedir, SRCTAG, DSTAMP)
+    cfgdir = f'{homedir}/{SRCTAG}/{DSTAMP}/cfg' % (homedir, SRCTAG, DSTAMP)
+    logdir = f'{homedir}/{SRCTAG}/{DSTAMP}/log' % (homedir, SRCTAG, DSTAMP)
+    tardir = f'{homedir}/{SRCTAG}/{DSTAMP}/tar' % (homedir, SRCTAG, DSTAMP)
+
+    dirlist = [tardir, cmddir, cfgdir, logdir]
     for mydir in dirlist:
         os.makedirs(mydir, exist_ok=True)
 
@@ -159,12 +160,12 @@ def executes_cmds(cmddir):
         targetcmd = re.sub('_{2,}', '_', targetcmd)
         if stderr:
             errfile = os.path.join(cmddir, targetcmd + '.' + DSTAMP + '.' + 'err.txt')
-            errfileobj = open(errfile, 'w+')
-            errfileobj.write(str(stderr))
+            with open(errfile, 'w+', encoding='utf8') as errfileobj:
+                errfileobj.write(str(stderr))
         if stdout:
             outfile = os.path.join(cmddir, targetcmd + '.' + DSTAMP + '.' + 'out.txt')
-            outfileobj = open(outfile, 'w+')
-            outfileobj.write(str(stdout))
+            with open(outfile, 'w+', encoding='utf8') as outfileobj:
+                outfileobj.write(str(stdout))
 
 def upload_remote(targetstring):
     """

@@ -17,8 +17,7 @@ filelist[8]="/var/log/fsck_hfs.log"
 filelist[9]="/var/log/install.log"
 filelist[10]="/var/log/shutdown_monitor.log"
 filelist[11]="/var/log/system.log"
-filelist[12]="/var/log/wifi-07-28-2019__17:50:02.796.log"
-filelist[13]="/var/log/wifi.log"
+filelist[12]="/var/log/wifi.log"
 printf -v filelist_d ' -f %s ' "${filelist[@]}" 
 filelist_d=${filelist_d:1}
 
